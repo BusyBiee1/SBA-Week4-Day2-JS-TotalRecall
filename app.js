@@ -894,56 +894,100 @@ console.log("\n");
 
 // 3. Combine Cats!
 // The cats are multiplying!
-
-// Write a function combineCatsthat has two parameters mama, and papa. The function will take two arguments -- each a cat object.
-
+// Write a function combineCatsthat has two parameters mama, and papa. The function 
+// will take two arguments -- each a cat object.
 // Pass cat1and cat2as arguments to the combineCatsfunction. The function should console.log them.
 // Example:
-
 // combineCats(cat1, cat2)
 // { name: "Joe", age: 19, breed: "Mog" }
-
 // { name: "Jam", age: 45, breed: "Siamese" }
-
 // This is to demonstrate that functions can take objects as arguments
-
 // You could also invoke the combineCatsfunction by writing the objects straight into the parentheses:
-
 // combineCats({ name: "Craig", age: 20, breed: "unknown" }, { name: "Linda", age: 20, breed: "undefined" });
-
 // Make it so the combineCatsfunction will return a combination of the two incoming cats
-
 // The result should be an object wherein the
-
 // name is a concatenation of the parents' names
 // the age is 1
 // the breed is each of the parents' breeds with a hyphen in between
 // Example:
-
 // console.log(combineCats(cat1, cat2));
 // Result:
-
-
-
 // This is to demonstrate that a function can return an object
 
+const cat3 = {
+    name: "Joe", 
+    age: 19, 
+    breed: "Mog" 
+}
+const cat4 = {
+    name: "Jam", 
+    age: 45, 
+    breed: "Siamese" 
+}
 
+function combineCats(papa, mama){
+    const combinedcartsreturn = { 
+        name: (`${papa.name.concat(mama.name)}`),
+        age: (`${papa.age}_${mama.age}`),
+        breed: (`${papa.breed}-${mama.breed}`)
+    }
+    return (combinedcartsreturn);
+}
+console.log(combineCats(cat3, cat4));
+console.log("\n");
 
+console.log(combineCats({ name: "Craig", age: 20, breed: "unknown" }, { name: "Linda", age: 20, breed: "undefined" }));
+console.log("\n");
 
+/////////////////////////////////////////////////////////////////////////////////
 
 // 4. Cat brain bender
 // If combineCatsreturns an object, and if combineCatstakes objects as arguments, then it stands to reason that:
-
 // catCombinatorcan use itself as its own argument.
-
 // Take a second to stew on that . . .
-
 // What is the result of:
-
 // console.log(combineCats(combineCats(cat1, cat2), combineCats(cat1, cat2)));
+// ANS:
+console.log(combineCats(combineCats(cat3, cat4), combineCats(cat3, cat4)));
+console.log("\n");
+
+/////////////////////////////////////////////////////////////////////////////////
+
 // Whoa . . .
-
 // The above console.log is two levels deep of combineCats.
-
-// Write a console.log that is three levels deep of combineCats. combineCats should have two arguments, each which are combineCats, each which have two arguments, each which are combineCats.
+// Write a console.log that is three levels deep of combineCats. 
+// combineCats should have two arguments, each which are combineCats, 
+// each which have two arguments, each which are combineCats.
 // Your output should look something like
+// ANS:
+console.log("------------------");
+function combineCats2(papa, mama){
+    return { 
+        //name: (`${papa.name.concat(mama.name)}`),        
+        name: (`${papa.name}${mama.name}`),
+        //age: (`${papa.age}_${mama.age}`),
+        age: 1,
+        breed: (`${papa.breed}-${mama.breed}`)
+    }
+}
+const cat5 = {
+    name: "Joe", 
+    age: 19, 
+    breed: "Mog" 
+}
+const cat6 = {
+    name: "Jam", 
+    age: 45, 
+    breed: "Siamese" 
+}
+const combinedcarsobj = combineCats2(
+                            combineCats2(
+                                         combineCats2(cat5, cat6), combineCats2(cat5, cat6)
+                                        ), 
+                            combineCats2(
+                                         combineCats2(cat5, cat6), combineCats2(cat5, cat6)
+                                        )
+                            );
+
+console.log(combinedcarsobj);
+console.log("\n");
