@@ -855,7 +855,8 @@ console.log("\n");
 /////////////////////////////////////////////////////////////////////////////////
 
 // Requirements Complete! Hungry for More?
-
+console.log("Requirements Complete! Hungry for More!");
+console.log("\n");
 // Cat Combinator
 // 1. Mama cat
 // Define an object called cat1 that contains the following properties:
@@ -928,7 +929,8 @@ const cat4 = {
 function combineCats(papa, mama){
     const combinedcartsreturn = { 
         name: (`${papa.name.concat(mama.name)}`),
-        age: (`${papa.age}_${mama.age}`),
+        age: 1,        
+       // age: (`${papa.age}_${mama.age}`),
         breed: (`${papa.breed}-${mama.breed}`)
     }
     return (combinedcartsreturn);
