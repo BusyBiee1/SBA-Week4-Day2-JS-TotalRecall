@@ -855,7 +855,7 @@ console.log("\n");
 /////////////////////////////////////////////////////////////////////////////////
 
 // Requirements Complete! Hungry for More?
-console.log("Requirements Complete! Hungry for More!");
+console.log("-------Requirements Complete! Hungry for More!------------");
 console.log("\n");
 // Cat Combinator
 // 1. Mama cat
@@ -914,7 +914,7 @@ console.log("\n");
 // console.log(combineCats(cat1, cat2));
 // Result:
 // This is to demonstrate that a function can return an object
-
+// ANS:
 const cat3 = {
     name: "Joe", 
     age: 19, 
@@ -925,7 +925,6 @@ const cat4 = {
     age: 45, 
     breed: "Siamese" 
 }
-
 function combineCats(papa, mama){
     const combinedcartsreturn = { 
         name: (`${papa.name.concat(mama.name)}`),
@@ -944,6 +943,8 @@ console.log("\n");
 /////////////////////////////////////////////////////////////////////////////////
 
 // 4. Cat brain bender
+console.log("------Cat brain bender-----");
+console.log("\n");
 // If combineCatsreturns an object, and if combineCatstakes objects as arguments, then it stands to reason that:
 // catCombinatorcan use itself as its own argument.
 // Take a second to stew on that . . .
@@ -962,7 +963,6 @@ console.log("\n");
 // each which have two arguments, each which are combineCats.
 // Your output should look something like
 // ANS:
-console.log("------------------");
 function combineCats2(papa, mama){
     return { 
         //name: (`${papa.name.concat(mama.name)}`),        
